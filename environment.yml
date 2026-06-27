@@ -1,0 +1,24 @@
+name: shapedem
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - scipy
+  - pandas
+  - scikit-learn
+  - scikit-image
+  - nibabel
+  - simpleitk
+  - trimesh
+  - xgboost
+  - matplotlib
+  - seaborn
+  - pyyaml
+  - tqdm
+  - requests
+  - pip
+  - pip:
+      - remotezip
+      # Optional GPU deep models (install the wheel matching your CUDA):
+      #   pip install torch --index-url https://download.pytorch.org/whl/cu124

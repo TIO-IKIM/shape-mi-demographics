@@ -1,0 +1,71 @@
+# Central config. ${REPO} = repo root, ${ROOT} = scratch base (env SHAPEDEM_ROOT,
+# else <REPO>/_workspace). Resolved in shapedem/config.py, so the repo is portable.
+paths:
+  root:          ${ROOT}
+  data_dir:      ${ROOT}/data        # raw downloads (git-ignored)
+  work_dir:      ${ROOT}/work        # transient extraction temp
+  features_dir:  ${ROOT}/features    # point-cloud cache (few GB, git-ignored)
+  cache_dir:     ${ROOT}/cache
+  results_dir:   ${REPO}/experiments  # small CSV/JSON, git-tracked (the evidence)
+
+datasets:
+  totalseg:
+    zenodo_record: 8367088
+    zip_url:  https://zenodo.org/api/records/8367088/files/Totalsegmentator_dataset_v2.zip/content
+    local_zip: ${ROOT}/data/Totalsegmentator_dataset_v2.zip
+    meta_member: meta.csv          # semicolon-delimited, utf-8-sig
+    ct_member_fmt: "{subject}/ct.nii.gz"
+    seg_member_fmt: "{subject}/segmentations/{organ}.nii.gz"
+  totalseg_mr:                     # TotalSegmentator-MRI (298 MRI, cross-modality for Paper A)
+    zip_url:  https://zenodo.org/api/records/11367005/files/TotalsegmentatorMRI_dataset_v100.zip/content
+    local_zip: ${ROOT}/data/TotalsegmentatorMRI_dataset_v100.zip
+    meta_member: meta.csv
+    image_member_fmt: "{subject}/mri.nii.gz"
+    seg_member_fmt: "{subject}/segmentations/{organ}.nii.gz"
+
+# Curated multi-organ set (soft organs + vasculature + skeleton + muscle).
+# Final analysis set is filtered at runtime by per-organ availability (presence_min).
+organs:
+  - liver
+  - spleen
+  - pancreas
+  - kidney_left
+  - kidney_right
+  - gallbladder
+  - stomach
+  - urinary_bladder
+  - heart
+  - aorta
+  - inferior_vena_cava
+  - esophagus
+  - autochthon_left
+  - autochthon_right
+  - hip_left
+  - hip_right
+  - sacrum
+  - femur_left
+  - femur_right
+  - vertebrae_L3
+
+extract:
+  n_points: 2048           # surface points sampled per organ
+  min_voxels: 500          # below this an organ mask is treated as absent (out-of-FOV / failed seg)
+  boundary_tol: 20         # >this many mask voxels on a volume face => organ clipped by FOV (truncated)
+  decimate_faces: 0        # 0 = no decimation (sampling is from full marching-cubes mesh)
+  seed: 0
+  coord_space: world       # apply affine -> RAS mm (anatomically consistent across subjects)
+
+labels:
+  sex: {col: gender, type: binary, pos: f, map: {m: 0, f: 1}}   # 1 = female
+  age: {col: age,    type: regression}
+  pathology_binary: {col: pathology, type: binary, pos: any,
+                     negatives: [no_pathology], drop: [unclear, ""]}  # 1 = any pathology
+
+domain:
+  institute_col: institute
+  primary_institute: I     # train-on-I / test-on-rest for cross-domain
+  acquisition_cols: [manufacturer, scanner_model, kvp]
+
+smoke:
+  n_subjects: 24
+  organs: [liver, heart, hip_left]

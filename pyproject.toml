@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shapedem"
+version = "0.1.0"
+description = "Shape-based prediction of demographic/clinical attributes from anatomical structures"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Gijs Luijten" }]
+dependencies = [
+  "numpy", "scipy", "pandas", "scikit-learn", "scikit-image",
+  "nibabel", "SimpleITK", "trimesh", "xgboost",
+  "matplotlib", "seaborn", "pyyaml", "tqdm", "requests", "remotezip",
+]
+
+[project.optional-dependencies]
+deep = ["torch"]
+dev = ["pytest"]
+
+[project.scripts]
+shapedem = "shapedem.cli:main"
+
+[tool.setuptools]
+packages = [
+  "shapedem", "shapedem.data", "shapedem.shapes",
+  "shapedem.models", "shapedem.train", "shapedem.datasets", "shapedem.analysis",
+]

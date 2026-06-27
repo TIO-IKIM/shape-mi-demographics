@@ -1,0 +1,18 @@
+# pip install -r requirements.txt  (all have prebuilt wheels; no compiler needed)
+numpy
+scipy
+pandas
+scikit-learn
+scikit-image
+nibabel
+SimpleITK
+trimesh
+xgboost
+matplotlib
+seaborn
+pyyaml
+tqdm
+requests
+remotezip
+# Optional, for the deep models (PointNet/DGCNN); pick the wheel for your CUDA:
+# torch
