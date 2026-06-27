@@ -1,0 +1,15 @@
+\begin{tabular}{llcc}
+\toprule
+Method & Eval & Sex AUC & Age MAE \\
+\midrule
+Naive (majority / mean age) & 5-fold CV & 0.500 & 11.7 \\
+Organ volumes only (XGB) & 5-fold CV & 0.815\,$\pm$\,0.023 & 10.5 \\
+Size descriptors (XGB) & 5-fold CV & 0.863\,$\pm$\,0.017 & 9.6 \\
+Shape descriptors (XGB) & 5-fold CV & 0.791\,$\pm$\,0.035 & 9.6 \\
+All descriptors (linear) & 5-fold CV & 0.854\,$\pm$\,0.024 & 10.0 \\
+All descriptors (RandomForest) & 5-fold CV & 0.849\,$\pm$\,0.026 & 9.6 \\
+All descriptors (XGBoost) & 5-fold CV & 0.868\,$\pm$\,0.016 & 9.3 \\
+SSM-PCA coeffs (XGB) & 5-fold CV & 0.636 & 11.7 \\
+Multi-organ PointNet & held-out test & 0.780 & 12.3 \\
+\bottomrule
+\end{tabular}

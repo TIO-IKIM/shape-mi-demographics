@@ -1,10 +1,7 @@
 # End to end integration test for the pipeline
 
-`run_example.py` is a self-contained, **offline** sanity check (no downloads, ~1
-minute). It synthesises organ masks whose *shape* depends on a hidden sex
-(anisotropy) and age (size), then runs the **real** pipeline used for the papers
-— marching cubes → surface point cloud → correspondence-free descriptors →
-cross-validated classifier/regressor — and asserts that sex and age are recovered.
+`run_example.py` is a self-contained, **offline** sanity check (no downloads, ~1 minute). 
+It synthesises organ masks whose *shape* depends on a hidden sex (anisotropy) and age (size), then runs the **real** pipeline used for the papers — marching cubes → surface point cloud → correspondence-free descriptors → cross-validated classifier/regressor — and asserts that sex and age are recovered.
 
 ```bash
 source .venv/bin/activate         # created by ../setup.sh
@@ -24,6 +21,4 @@ OK — pipeline works. Outputs in _workspace/example_output/
 > the pipeline is working correctly.
 It writes `_workspace/example_output/example_results.json` and `example.png`.
 
-To run the pipeline on **real data** instead, see the top-level `README.md`
-(`make download-totalseg`, then `python -m shapedem.cli smoke` for a tiny
-range-requested subset, or the full targets).
+To run the pipeline on **real data** instead, see the top-level `README.md` (`make download-totalseg`, then `python -m shapedem.cli smoke` for a tiny range-requested subset, or the full targets).

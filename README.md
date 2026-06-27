@@ -1,17 +1,13 @@
 # shape-demographics
 
 **What does anatomical *shape* know about you?**
-
-Predicting demographic and clinical attributes from the 3D **shape** of
-anatomical structures alone (segmentations -> surface point clouds -> descriptors),
-with image intensity removed. This repository accompanies the ShapeMI workshop
-paper and contains the full, reproducible pipeline.
+Predicting demographic and clinical attributes from the 3D **shape** of anatomical structures alone (segmentations -> surface point clouds -> descriptors), with image intensity removed. This repository accompanies the ShapeMI workshop paper and contains the full, reproducible pipeline.
 
 > **Reproducibility contract.** No number in the paper is hand-typed. Every
 > figure and statistic is generated from files in `experiments/` by the
 > pipeline. Re-run a stage, and the results regenerate.
 
-If you find this work useful, please cite:
+**If you find this work useful, please cite:**
 
 > G. Luijten, B. Hinrichs-Puladi, M. Engelke, C. Wachinger, and J. Egger,
 > "What Does Anatomical Shape Know About You? A Multi-Organ, Shape-Only Study
@@ -41,8 +37,7 @@ source .venv/bin/activate
 python example/run_example.py      # offline synthetic demo
 ```
 
-The example synthesises organ masks with sex/age-dependent shape and runs the
-**real** pipeline end-to-end (see `example/README.md`).
+The example synthesises organ masks with sex/age-dependent shape and runs the pipeline end-to-end (see `example/README.md`).
 
 ### Alternative: conda
 
@@ -50,10 +45,7 @@ The example synthesises organ masks with sex/age-dependent shape and runs the
 conda env create -f environment.yml && conda activate shapedem && pip install -e .
 ```
 
-Both `setup.sh` (venv) and `conda env create` have been tested on **macOS
-(Apple Silicon M5)** and **Linux (NVIDIA GPU cluster)**. `setup.sh`
-auto-detects a working Python version (3.10–3.13); override with
-`PYTHON=python3.x bash setup.sh` if needed.
+Both `setup.sh` (venv) and `conda env create` have been tested on **macOS (Apple Silicon M5)** and **Linux (NVIDIA GPU cluster)**. `setup.sh` auto-detects a working Python version (3.10–3.13); override with `PYTHON=python3.x bash setup.sh` if needed.
 
 ### Exact reproducibility (Linux / NVIDIA cluster only)
 
@@ -65,6 +57,11 @@ The lock file pins every dependency to the exact version used on the compute
 cluster (Linux x86_64, CUDA 12, Python 3.11). It includes GPU-specific
 packages (`nvidia-nccl-cu12`, `torch` with CUDA support) that have no macOS
 wheels — use the conda or venv install above on non-Linux machines.
+
+Classical results (all `analyze`, `stats`, `labeling`, etc.) reproduce exactly
+across platforms. Deep model metrics (PointNet, DGCNN) may shift slightly
+between CPU and GPU due to floating-point differences in PyTorch, but the
+conclusions are robust.
 
 ---
 
