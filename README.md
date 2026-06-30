@@ -18,13 +18,13 @@ Predicting demographic and clinical attributes from the 3D **shape** of anatomic
 
 ## Key Findings
 
-- Sex from shape alone: **AUC 0.868** (95% CI 0.846-0.886); age: **MAE 9.3 yr** (R^2 0.33)
+- Sex from shape alone: **AUC 0.87** (95% CI 0.85–0.89); age: **MAE 9.3 yr** (R^2 0.34)
 - **Shape > intensity** for sex (0.87 vs 0.73) -- the sex signal is *geometric*
-- Most of the sex signal is **organ size**; scale-free shape alone still gives AUC 0.78
+- Most of the sex signal is **organ size**; scale-free shape alone still gives AUC 0.79
 - Strongest sex cue: **hip bones (AUC 0.94)** -- recovers forensic pelvic dimorphism automatically
 - Generalises under **leave-one-institution-out** (sex AUC 0.83 on the large held-out site)
   and **across modality** -- sex replicates on MRI (AUC 0.76)
-- **Auto-labeling:** calibrated (ECE 0.04); 50% coverage -> 92.8% accuracy
+- **Auto-labeling:** calibrated (ECE 0.04); 50% coverage -> 93.5% accuracy
 - **Privacy:** shape descriptors make a single organ near-unique within the cohort
 
 ---
@@ -60,8 +60,10 @@ wheels — use the conda or venv install above on non-Linux machines.
 
 Classical results (all `analyze`, `stats`, `labeling`, etc.) reproduce exactly
 across platforms. Deep model metrics (PointNet, DGCNN) may shift slightly
-between CPU and GPU due to floating-point differences in PyTorch, but the
-conclusions are robust.
+between CPU and GPU due to floating-point differences in PyTorch, and
+point-cloud resampling at load time is intentionally unseeded (acts as
+augmentation); results are averaged over 3 seeds so run-to-run variance is
+small.
 
 ---
 

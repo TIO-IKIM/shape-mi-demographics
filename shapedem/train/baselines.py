@@ -99,13 +99,16 @@ def oof_regression(X, y, kind="xgb", n_splits=5, seed=0):
 # Compute a 95% bootstrap confidence interval for any sklearn-compatible metric.
 # Resamples with replacement; try/except silently skips degenerate draws (e.g. single-class samples for AUC).
 def bootstrap_ci(y_true, y_score, metric, n_boot=2000, seed=0):
-    rng = np.random.RandomState(seed); n = len(y_true); vals = []
+    rng = np.random.RandomState(seed); n = len(y_true); vals = []; skipped = 0
     for _ in range(n_boot):
         idx = rng.randint(0, n, n)  # Sample-with-replacement indices.
         try:
             vals.append(metric(y_true[idx], y_score[idx]))
-        except Exception:
-            pass  # Degenerate resample (e.g. all one class) -- skip rather than crash.
+        except (ValueError, IndexError):
+            skipped += 1
+    if skipped:
+        import warnings
+        warnings.warn(f"bootstrap_ci: {skipped}/{n_boot} degenerate resamples skipped")
     lo, hi = np.percentile(vals, [2.5, 97.5])
     return float(np.mean(vals)), float(lo), float(hi)
 

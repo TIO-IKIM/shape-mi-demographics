@@ -23,6 +23,8 @@ _PCTS = (10, 25, 50, 75, 90)
 def hu_stats(ct: np.ndarray, mask: np.ndarray, prefix: str = "") -> dict:
     """Hounsfield-unit summary statistics inside a mask (pure; unit-tested)."""
     v = ct[mask]
+    if v.size == 0:  # empty mask after truncation filtering
+        return {}
     out = {f"{prefix}int_mean": float(v.mean()), f"{prefix}int_std": float(v.std())}
     for p, q in zip(_PCTS, np.percentile(v, _PCTS)):
         out[f"{prefix}int_p{p}"] = float(q)

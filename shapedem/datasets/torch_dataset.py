@@ -33,7 +33,7 @@ class MultiOrganPC(Dataset):
         if sh is None:
             return np.zeros((self.n_points, 3), np.float32), 0.0, 0.0
         pts = np.asarray(sh["points"], np.float32)
-        if len(pts) != self.n_points:  # resample/pad to fixed N
+        if len(pts) != self.n_points:  # resample/pad to fixed N; unseeded for augmentation -- results averaged over 3 seeds
             idx = np.random.choice(len(pts), self.n_points, replace=len(pts) < self.n_points)
             pts = pts[idx]
         c = pts.mean(0)
