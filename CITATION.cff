@@ -17,9 +17,9 @@ authors:
   - family-names: Egger
     given-names: Jan
     orcid: "https://orcid.org/0000-0002-5225-1982"
-version: 0.1.0
+version: 1.0.0
 license: MIT
-date-released: 2026-06-27
+date-released: 2026-08-17
 keywords:
   - statistical shape analysis
   - medical imaging

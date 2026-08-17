@@ -53,7 +53,7 @@ def fig_uniqueness(rdir, outdir):
     df = pd.read_csv(os.path.join(rdir, "uniqueness_curve.csv")).dropna()
     fig, ax = plt.subplots(figsize=(5, 3.2))
     ax.plot(df["k_organs"], 100 * df["frac_unique"], "-o", color="#444")
-    ax.set_xlabel("# organs in shape signature"); ax.set_ylabel("% subjects uniquely identified")
+    ax.set_xlabel("# organs in shape signature"); ax.set_ylabel("% subjects unique within cohort")
     ax.set_ylim(0, 105); ax.set_title("Anatomical shape as a fingerprint")
     _save(fig, outdir, "uniqueness")
 

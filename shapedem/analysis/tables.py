@@ -217,6 +217,13 @@ def make_tables(cfg, out_dir: str):
         macros += _macro("UniqBinsTwenty", _opt(lambda: f"{100*s.loc[20]:.0f}"))
     else:
         macros += _macro("UniqBinsThree", "n/a") + _macro("UniqBinsTwenty", "n/a")
+    _uqc = os.path.join(rdir, "uniqueness_curve.csv")
+    if os.path.exists(_uqc):
+        uc = pd.read_csv(_uqc).dropna()
+        macros += _macro("UniqNfirst", f"{int(uc.iloc[0]['n_subjects'])}")
+        macros += _macro("UniqNall", f"{int(uc.iloc[-1]['n_subjects'])}")
+    macros += _macro("NPerOrganMin", f"{int(attr['n'].min())}")
+    macros += _macro("NPerOrganMax", f"{int(attr['n'].max())}")
 
     # comparison-derived macros (n/a until `cli compare` is run)
     def _cm(name, row, key, fmt):

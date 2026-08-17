@@ -140,6 +140,7 @@ def write_tables(cfg):
         f.write("\\bottomrule\n\\end{tabular}\n")
     macs = "".join([
         f"\\newcommand{{\\MRn}}{{{cm['n_mr']}}}\n",
+        f"\\newcommand{{\\MRnSex}}{{{cm['mr_sex_cv']['n']}}}\n",
         f"\\newcommand{{\\MRsexAUC}}{{{cm['mr_sex_cv']['auc']:.3f}}}\n",
         f"\\newcommand{{\\MRageMAE}}{{{cm['mr_age_cv']['mae']:.1f}}}\n",
         f"\\newcommand{{\\CTtoMRsex}}{{{cm['ct_to_mr_sex']['auc']:.3f}}}\n",

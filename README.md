@@ -12,7 +12,9 @@ Predicting demographic and clinical attributes from the 3D **shape** of anatomic
 > G. Luijten, B. Hinrichs-Puladi, M. Engelke, C. Wachinger, and J. Egger,
 > "What Does Anatomical Shape Know About You? A Multi-Organ, Shape-Only Study
 > of Demographic Prediction, Attribution, and Privacy,"
-> *under review at ShapeMI 2026*.
+> accepted at the ShapeMI workshop, MICCAI 2026 (proceedings to appear).
+
+The camera-ready PDF is in [`paper/`](paper/).
 
 ---
 
@@ -155,14 +157,14 @@ their outputs to build summary tables and plots.
 
 | Stage | What it does | Output | Time |
 |---|---|---|---|
-| `smoke` | Quick sanity check — downloads a few subjects via HTTP range requests, extracts shapes, runs a tiny CV. No full download needed. | `experiments/smoke_results.json` | ~2 min |
+| `smoke` | Quick sanity check — downloads a few subjects via HTTP range requests, extracts shapes, runs a tiny CV. No full download needed. | `experiments/smoke_results.json` (generated on run; not shipped) | ~2 min |
 | `meta` | Parses the TotalSegmentator metadata CSV (age, sex, pathology, institute) and caches it as a label table. | `experiments/totalseg_labels.csv` | seconds |
 | `analyze` | Trains and evaluates **classical models** (XGBoost, 5-fold stratified CV) for sex classification and age regression. Runs per-organ attribution, size-vs-shape decomposition, cross-domain transfer, uniqueness analysis, and multi-organ fusion. | `attribution.csv`, `size_vs_shape.csv`, `cross_domain.csv`, `uniqueness_curve.csv`, `fusion.json`, `organ_presence.csv` | ~5 min |
 | `intensity` | Extracts Hounsfield unit statistics (mean, std, percentiles) from the raw CT volumes for each organ, using 48 parallel workers. | `experiments/intensity_features.csv` | ~10 min |
 | `modality` | Compares shape-only vs intensity-only vs combined features for sex and age prediction. | `experiments/modality_comparison.csv` | ~1 min |
 | `stats` | Computes bootstrap 95% CIs on headline metrics (out-of-fold predictions), leave-one-institution-out generalization, institute demographics, uniqueness sensitivity to quantization, and truncation bias. | `headline_stats.json`, `loio.csv`, `institute_demographics.csv`, `uniqueness_sensitivity.csv`, `truncation_bias.csv` | ~5 min |
 | `labeling` | Auto-labeling viability: selective prediction (accuracy vs coverage trade-off), calibration (ECE), and data-efficiency learning curves. | `selective_sex.csv`, `calibration_sex.csv`, `learning_curve_sex.csv`, `learning_curve_age.csv`, `labeling_results.json` | ~3 min |
-| `deep` | Trains a multi-organ multi-task **PointNet** (or DGCNN with `--encoder dgcnn`) using the dataset's official train/val/test split. Validation-based early stopping, averaged over 3 seeds. Requires `pip install torch`. | `deep_results.json` or `deep_dgcnn_results.json` | ~30 min (GPU) |
+| `deep` | Trains a multi-organ multi-task **PointNet** (or DGCNN with `--encoder dgcnn`) using the dataset's official train/val/test split. Validation-based early stopping, averaged over 3 seeds; the reported runs used the CLI defaults, and early stopping determines the effective number of epochs. Requires `pip install torch`. Note: the DGCNN encoder here uses a static k-NN graph (a simplification of the original dynamic-graph method) and was not evaluated for the paper. | `deep_results.json` (shipped) or `deep_dgcnn_results.json` (not shipped) | ~30 min (GPU) |
 | `crossmodal` | Downloads TotalSegmentator-MRI (~2 GB), extracts MRI shapes, runs within-MRI CV and CT↔MRI cross-modality transfer. | `crossmodal_results.json`, `totalseg_mr_labels.csv` | ~15 min |
 | `compare` | Reads results from all prior stages and assembles a single comparison table (classical vs deep vs SSM vs volume-only baselines). | `experiments/comparison.csv` | ~5 min |
 | `figures` | Generates all plots (attribution bar charts, size-vs-shape, uniqueness curve, labeling, SSM modes) from the experiment CSVs. | `experiments/figures/*.png` and `.pdf` | seconds |
