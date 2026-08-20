@@ -352,7 +352,7 @@ def compose(ctx):
 
     y_top = 0.99
     y_bot = max(b.get_position().y1 for b in (b0, b1, b2)) + 0.045
-    label_over(fig, a0, "(a) CT + 16 masks", y_top)
+    label_over(fig, a0, "(a) CT + organ masks", y_top)
     label_over(fig, [ax_kept, ax_disc],
                "(b) truncation control (>20 vox → out)", y_top)
     label_over(fig, [a2, a3], "(c) mesh → 2048 points", y_top)
