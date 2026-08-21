@@ -85,7 +85,7 @@ def make_tables(cfg, out_dir: str):
         else:
             f.write("\\begin{tabular}{lrcc}\n\\toprule\n")
             f.write("Feature modality & dim & Sex AUC & Age MAE \\\\\n\\midrule\n")
-            disp = {"shape": "Shape (geometry only)", "intensity": "Intensity (HU stats)",
+            disp = {"shape": "Geometric descriptors (all)", "intensity": "Intensity (HU stats)",
                     "shape+intensity": "Shape $+$ intensity"}
             for _, r in mod.iterrows():
                 f.write(f"{disp.get(r['modality'], _tex(r['modality']))} & {int(r['n_features'])} & "
