@@ -1,6 +1,11 @@
 cff-version: 1.2.0
-message: "If you use this code, please cite the paper below."
-title: "What Does Anatomical Shape Know About You? A Multi-Organ, Shape-Only Study of Demographic Prediction, Attribution, and Privacy"
+message: "If you use this code, please cite the paper (preferred-citation below)."
+type: software
+title: "shape-demographics: shape-only demographic prediction, attribution, and privacy analysis"
+abstract: >-
+  Reproducible pipeline that turns TotalSegmentator CT and MRI segmentations into
+  surface point clouds and measures how much demographic and identifying information
+  organ shape alone carries, with image intensity removed.
 authors:
   - family-names: Luijten
     given-names: Gijs
@@ -19,10 +24,37 @@ authors:
     orcid: "https://orcid.org/0000-0002-5225-1982"
 version: 1.0.0
 license: MIT
-date-released: 2026-08-17
+date-released: 2026-08-21
+repository-code: "https://github.com/TIO-IKIM/shape-mi-demographics"
+url: "https://github.com/TIO-IKIM/shape-mi-demographics"
 keywords:
   - statistical shape analysis
   - medical imaging
   - point clouds
+  - demographic prediction
   - privacy
   - computational anatomy
+preferred-citation:
+  type: conference-paper
+  title: "What Does Anatomical Shape Know About You? A Multi-Organ, Shape-Only Study of Demographic Prediction, Attribution, and Privacy"
+  authors:
+    - family-names: Luijten
+      given-names: Gijs
+      orcid: "https://orcid.org/0009-0000-3404-1917"
+    - family-names: Hinrichs-Puladi
+      given-names: Behrus
+      orcid: "https://orcid.org/0000-0001-5909-6105"
+    - family-names: Engelke
+      given-names: Merlin
+      orcid: "https://orcid.org/0000-0002-8463-8786"
+    - family-names: Wachinger
+      given-names: Christian
+      orcid: "https://orcid.org/0000-0002-3652-1874"
+    - family-names: Egger
+      given-names: Jan
+      orcid: "https://orcid.org/0000-0002-5225-1982"
+  collection-title: "Shape in Medical Imaging (ShapeMI), MICCAI 2026 workshop"
+  conference:
+    name: "ShapeMI: Shape in Medical Imaging, MICCAI 2026 workshop"
+  year: 2026
+  notes: "Proceedings to appear."

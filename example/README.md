@@ -21,4 +21,4 @@ OK — pipeline works. Outputs in _workspace/example_output/
 > the pipeline is working correctly.
 It writes `_workspace/example_output/example_results.json` and `example.png`.
 
-To run the pipeline on **real data** instead, see the top-level `README.md` (`make download-totalseg`, then `python -m shapedem.cli smoke` for a tiny range-requested subset, or the full targets).
+To run the pipeline on **real data** instead, see the top-level `README.md`: run `python -m shapedem.cli smoke` for a tiny range-requested subset, or `bash scripts/run_full_extract.sh` for the full cohort.
