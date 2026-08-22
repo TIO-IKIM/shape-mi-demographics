@@ -18,7 +18,7 @@ Predicting demographic attributes from the 3D **shape** of anatomical structures
 > of Demographic Prediction, Attribution, and Privacy,"
 > ShapeMI workshop, MICCAI 2026 (proceedings to appear).
 
-A BibTeX/CFF record is in [`CITATION.cff`](CITATION.cff); the paper (PMLR camera-ready layout, CC BY 4.0) is in [`paper/`](paper/).
+A BibTeX/CFF record is in [`CITATION.cff`](CITATION.cff). The paper PDF is not hosted here yet: publication is governed by a Springer Nature licence to publish, which sets when each version may be made public. See [`paper/`](paper/) for details, and write to the corresponding author if you need a copy in the meantime.
 
 ---
 
@@ -235,7 +235,7 @@ scripts/                   run_full_extract.sh, make_pipeline_figure.py
 experiments/               result CSVs/JSONs, figures, tables — git-tracked
 tests/                     unit tests (pytest)
 example/                   offline synthetic demo
-paper/                     paper PDF (PMLR layout)
+paper/                     note on paper availability (PDF follows publication)
 CITATION.cff               citation metadata
 DISCLAIMER.md              disclosure on the use of large language models
 LICENSE                    MIT (code); datasets keep their own licences
