@@ -235,7 +235,7 @@ scripts/                   run_full_extract.sh, make_pipeline_figure.py
 experiments/               result CSVs/JSONs, figures, tables — git-tracked
 tests/                     unit tests (pytest)
 example/                   offline synthetic demo
-paper/                     camera-ready PDF
+paper/                     paper PDF (PMLR layout)
 CITATION.cff               citation metadata
 DISCLAIMER.md              disclosure on the use of large language models
 LICENSE                    MIT (code); datasets keep their own licences
