@@ -9,7 +9,10 @@ description = "Shape-based prediction of demographic/clinical attributes from an
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "MIT" }
-authors = [{ name = "Gijs Luijten" }]
+authors =   { name = "Gijs Luijten", email = "gijs.luijten@uk-essen.de" },
+  { name = "Merlin Engelke" },
+  { name = "Richard Ruppel" },
+  { name = "Jan Egger" },
 dependencies = [
   "numpy", "scipy", "pandas", "scikit-learn", "scikit-image",
   "nibabel", "SimpleITK", "trimesh", "xgboost",
