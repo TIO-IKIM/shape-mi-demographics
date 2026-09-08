@@ -1,60 +1,54 @@
 cff-version: 1.2.0
-message: "If you use this code, please cite the paper (preferred-citation below)."
-type: software
-title: "shape-demographics: shape-only demographic prediction, attribution, and privacy analysis"
-abstract: >-
-  Reproducible pipeline that turns TotalSegmentator CT and MRI segmentations into
-  surface point clouds and measures how much demographic and identifying information
-  organ shape alone carries, with image intensity removed.
+message: "If you use this code, please cite the paper below."
+title: "shape-demographics (CAPI-WOMEN)"
+abstract: "Intensity-free shape pipeline for female pelvic organs: age regression, endometrioma annotation prediction, and inter-rater reproducibility."
 authors:
   - family-names: Luijten
     given-names: Gijs
     orcid: "https://orcid.org/0009-0000-3404-1917"
-  - family-names: Hinrichs-Puladi
-    given-names: Behrus
-    orcid: "https://orcid.org/0000-0001-5909-6105"
+    affiliation: "Institute for AI in Medicine (IKIM), University Medicine Essen"
+    email: gijs.luijten@uk-essen.de
   - family-names: Engelke
     given-names: Merlin
     orcid: "https://orcid.org/0000-0002-8463-8786"
-  - family-names: Wachinger
-    given-names: Christian
-    orcid: "https://orcid.org/0000-0002-3652-1874"
+    affiliation: "Institute for AI in Medicine (IKIM), University Medicine Essen"
+  - family-names: Ruppel
+    given-names: Richard
+    orcid: "https://orcid.org/0009-0002-7081-0300"
+    affiliation: "Department of Radiology, Charite -- Universitaetsmedizin Berlin"
   - family-names: Egger
     given-names: Jan
     orcid: "https://orcid.org/0000-0002-5225-1982"
+    affiliation: "Institute for AI in Medicine (IKIM), University Medicine Essen"
 version: 1.0.0
 license: MIT
-date-released: 2026-08-21
-repository-code: "https://github.com/TIO-IKIM/shape-mi-demographics"
-url: "https://github.com/TIO-IKIM/shape-mi-demographics"
+date-released: 2026-09-08
+repository-code: "https://github.com/TIO-IKIM/shape-demographics-capi"
 keywords:
-  - statistical shape analysis
-  - medical imaging
-  - point clouds
-  - demographic prediction
-  - privacy
-  - computational anatomy
+  - endometriosis
+  - pelvic MRI
+  - shape analysis
+  - multi-site bias
+  - label trap
+  - uterine morphology
 preferred-citation:
   type: conference-paper
-  title: "What Does Anatomical Shape Know About You? A Multi-Organ, Shape-Only Study of Demographic Prediction, Attribution, and Privacy"
+  title: "A Multi-Site Label Trap in Shape-Based Endometriosis Detection: What Female Pelvic-Organ Shape Does (and Does Not) Encode"
   authors:
     - family-names: Luijten
       given-names: Gijs
       orcid: "https://orcid.org/0009-0000-3404-1917"
-    - family-names: Hinrichs-Puladi
-      given-names: Behrus
-      orcid: "https://orcid.org/0000-0001-5909-6105"
     - family-names: Engelke
       given-names: Merlin
       orcid: "https://orcid.org/0000-0002-8463-8786"
-    - family-names: Wachinger
-      given-names: Christian
-      orcid: "https://orcid.org/0000-0002-3652-1874"
+    - family-names: Ruppel
+      given-names: Richard
+      orcid: "https://orcid.org/0009-0002-7081-0300"
     - family-names: Egger
       given-names: Jan
       orcid: "https://orcid.org/0000-0002-5225-1982"
-  collection-title: "Shape in Medical Imaging (ShapeMI), MICCAI 2026 workshop"
-  conference:
-    name: "ShapeMI: Shape in Medical Imaging, MICCAI 2026 workshop"
+  collection-title: "CAPI-WOMEN Workshop, MICCAI 2026, Lecture Notes in Computer Science"
+  publisher:
+    name: Springer
   year: 2026
-  notes: "Proceedings to appear."
+  notes: "In press"
