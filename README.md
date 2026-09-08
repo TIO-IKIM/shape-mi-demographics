@@ -18,7 +18,7 @@ Predicting demographic attributes from the 3D **shape** of anatomical structures
 > of Demographic Prediction, Attribution, and Privacy,"
 > ShapeMI workshop, MICCAI 2026 (proceedings to appear).
 
-A BibTeX/CFF record is in [`CITATION.cff`](CITATION.cff). The paper PDF is not hosted here yet: publication is governed by a Springer Nature licence to publish, which sets when each version may be made public. See [`paper/`](paper/) for details, and write to the corresponding author if you need a copy in the meantime.
+A BibTeX/CFF record is in [`CITATION.cff`](CITATION.cff). The paper PDF is not hosted here yet: publication is governed by a Springer Nature licence to publish, which sets when each version may be made public. See [`paper/`](paper/) for details, and write to the corresponding author if you need a copy in the meantime. The poster including poster pitch can be found here: [`poster/`](poster/)
 
 ---
 
