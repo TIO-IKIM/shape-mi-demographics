@@ -34,6 +34,109 @@ keywords:
   - demographic prediction
   - privacy
   - computational anatomy
+references:
+  - type: article
+    title: "TotalSegmentator: Robust segmentation of 104 anatomic structures in CT images"
+    authors:
+      - family-names: "Wasserthal"
+        given-names: "Jakob"
+      - family-names: "Breit"
+        given-names: "Hanns-Christian"
+      - family-names: "Meyer"
+        given-names: "Manfred T."
+      - family-names: "Pradella"
+        given-names: "Maurice"
+      - family-names: "Hinck"
+        given-names: "Daniel"
+      - family-names: "Sauter"
+        given-names: "Alexander W."
+      - family-names: "Heye"
+        given-names: "Tobias"
+      - family-names: "Boll"
+        given-names: "Daniel T."
+      - family-names: "Cyriac"
+        given-names: "Joshy"
+      - family-names: "Yang"
+        given-names: "Shan"
+      - family-names: "Bach"
+        given-names: "Michael"
+      - family-names: "Segeroth"
+        given-names: "Martin"
+    journal: "Radiology: Artificial Intelligence"
+    volume: 5
+    issue: 5
+    year: 2023
+    doi: 10.1148/ryai.230024
+    notes: "CT dataset paper."
+  - type: data
+    title: "Dataset with segmentations of 117 important anatomical structures in 1228 CT images"
+    authors:
+      - family-names: "Wasserthal"
+        given-names: "Jakob"
+    version: 2.0.0
+    year: 2023
+    doi: 10.5281/zenodo.8367088
+    license: CC-BY-4.0
+    notes: "CT dataset record used by this pipeline (Zenodo 8367088)."
+  - type: article
+    title: "TotalSegmentator MRI: Robust sequence-independent segmentation of multiple anatomic structures in MRI"
+    authors:
+      - family-names: "Akinci D'Antonoli"
+        given-names: "Tugba"
+      - family-names: "Berger"
+        given-names: "Lucas K."
+      - family-names: "Indrakanti"
+        given-names: "Ashraya K."
+      - family-names: "Vishwanathan"
+        given-names: "Nathan"
+      - family-names: "Weiss"
+        given-names: "Jakob"
+      - family-names: "Jung"
+        given-names: "Matthias"
+      - family-names: "Berkarda"
+        given-names: "Zeynep"
+      - family-names: "Rau"
+        given-names: "Alexander"
+      - family-names: "Reisert"
+        given-names: "Marco"
+      - family-names: "Küstner"
+        given-names: "Thomas"
+      - family-names: "Walter"
+        given-names: "Alexandra"
+      - family-names: "Merkle"
+        given-names: "Elmar M."
+      - family-names: "Boll"
+        given-names: "Daniel T."
+      - family-names: "Breit"
+        given-names: "Hanns-Christian"
+      - family-names: "Nicoli"
+        given-names: "Andrew Phillip"
+      - family-names: "Segeroth"
+        given-names: "Martin"
+      - family-names: "Cyriac"
+        given-names: "Joshy"
+      - family-names: "Yang"
+        given-names: "Shan"
+      - family-names: "Wasserthal"
+        given-names: "Jakob"
+    journal: "Radiology"
+    volume: 314
+    issue: 2
+    year: 2025
+    doi: 10.1148/radiol.241613
+    notes: "MRI dataset paper."
+  - type: data
+    title: "TotalSegmentator MRI dataset: 298 MRI images with segmentations for 56 anatomical regions"
+    authors:
+      - family-names: "Wasserthal"
+        given-names: "Jakob"
+      - family-names: "Akinci D'Antonoli"
+        given-names: "Tugba"
+    version: 1.0.0
+    year: 2024
+    doi: 10.5281/zenodo.11367005
+    license: CC-BY-NC-SA-2.0
+    notes: "MRI dataset record used by this pipeline (Zenodo 11367005); non-commercial, share-alike."
 preferred-citation:
   type: conference-paper
   title: "What Does Anatomical Shape Know About You? A Multi-Organ, Shape-Only Study of Demographic Prediction, Attribution, and Privacy"

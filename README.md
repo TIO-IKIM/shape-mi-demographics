@@ -89,12 +89,30 @@ augmentation); results are averaged over 3 seeds so run-to-run variance is small
 
 | Dataset | Subjects | Used here | License | Source |
 |---|---|---|---|---|
-| TotalSegmentator v2 (CT) | 1,228 | 1,174 after exclusions | CC BY 4.0 | Zenodo 8367088 |
-| TotalSegmentator-MRI | 298 | 240 with usable shapes, 196 with sex/age labels | CC BY 4.0 | Zenodo 11367005 |
+| TotalSegmentator v2 (CT) | 1,228 | 1,174 after exclusions | CC BY 4.0 | [Zenodo 8367088](https://doi.org/10.5281/zenodo.8367088) |
+| TotalSegmentator-MRI | 298 | 240 with usable shapes, 196 with sex/age labels | CC BY-NC-SA 2.0 | [Zenodo 11367005](https://doi.org/10.5281/zenodo.11367005) |
 
 The CT dataset drives all main analyses. The MRI dataset is used only for the
 cross-modality experiment (step 4) and is downloaded automatically by
 `python -m shapedem.cli crossmodal`.
+
+Both datasets are attribution-licensed. If you use this pipeline, cite the
+dataset papers and the dataset records alongside our paper:
+
+- **CT:** Wasserthal J, et al. TotalSegmentator: Robust segmentation of 104
+  anatomic structures in CT images. *Radiology: Artificial Intelligence*
+  2023;5(5):e230024. [doi:10.1148/ryai.230024](https://doi.org/10.1148/ryai.230024).
+  Dataset v2.0.0 (1,228 CT, 117 structures):
+  [doi:10.5281/zenodo.8367088](https://doi.org/10.5281/zenodo.8367088), CC BY 4.0.
+- **MRI:** Akinci D'Antonoli T, et al. TotalSegmentator MRI: Robust
+  sequence-independent segmentation of multiple anatomic structures in MRI.
+  *Radiology* 2025;314(2):e241613.
+  [doi:10.1148/radiol.241613](https://doi.org/10.1148/radiol.241613).
+  Dataset v1.0.0 (298 MRI, 56 structures):
+  [doi:10.5281/zenodo.11367005](https://doi.org/10.5281/zenodo.11367005),
+  CC BY-NC-SA 2.0 (non-commercial, share-alike).
+
+BibTeX for all four is in [`CITATION.cff`](CITATION.cff) under `references`.
 
 Download the CT data (scripted and resumable):
 
@@ -276,5 +294,5 @@ reviewed and approved by the first author. See [`DISCLAIMER.md`](DISCLAIMER.md).
 ## License
 
 Code: MIT (see [`LICENSE`](LICENSE)). The TotalSegmentator datasets retain their
-own licence (CC BY 4.0); derived shapes are redistributed only where that
-licence permits.
+own licences (CT: CC BY 4.0; MRI: CC BY-NC-SA 2.0, non-commercial and
+share-alike); derived shapes are redistributed only where those licences permit.
